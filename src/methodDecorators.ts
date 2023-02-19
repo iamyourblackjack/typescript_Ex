@@ -38,6 +38,27 @@ function authorize(role: string) {
   };
 }
 
+// Class Decorator
+function freeze(constructor: Function) {
+  Object.freeze(constructor);
+  Object.freeze(constructor.prototype);
+}
+
+function singleton<T extends { new (...args: any[]): {} }>(ctor: T) {
+  return class Singleton extends ctor {
+    static _instance: Singleton = null;
+
+    constructor(...args: any[]) {
+      super(...args);
+      if (Singleton._instance) {
+        throw Error("Duplicate instane");
+      }
+      Singleton._instance = this;
+    }
+  };
+}
+@freeze
+@singleton
 class ContactRepository {
   private contacts: Contact[] = [];
 
