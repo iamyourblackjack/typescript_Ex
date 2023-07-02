@@ -1,3 +1,4 @@
+// Add a comment.
 function query<T>(
   items: T[],
   query: {

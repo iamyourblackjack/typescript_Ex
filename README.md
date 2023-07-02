@@ -2,7 +2,7 @@
 
 The repository contains various examples to show the powerfulness of Typescript.
 
-I love Typescript.
+I love Typescript, do you?
 
 <em>Jack Lu</em><br>
 <em>2/17/2023</em><br>
